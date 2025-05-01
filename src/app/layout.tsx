@@ -4,6 +4,7 @@ import "./globals.css";
 import { Header } from "@/components/header";
 import { AuthProvider } from "@/providers/auth";
 import { ModalProvider } from "@/providers/modal";
+import { ProgressProviders } from "@/providers/progress";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -23,10 +24,12 @@ export default function RootLayout({
         <AuthProvider>
           <ModalProvider>
             <Header />
-            {children}
+            <ProgressProviders>
+              {children}
+            </ProgressProviders>
           </ModalProvider>
         </AuthProvider>
       </body>
-    </html>
+    </html >
   );
 }
